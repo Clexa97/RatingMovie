@@ -9,6 +9,21 @@ db.serialize(() => {
       password TEXT NOT NULL
     )
   `);
+
+  db.run(`
+ CREATE TABLE IF NOT EXISTS reviews (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  userId INTEGER,
+  movieId INTEGER,
+  title TEXT,
+  poster TEXT,
+  genre TEXT,
+  comment TEXT,
+  rating INTEGER,
+  tags TEXT,
+  date TEXT
+)
+  `);
 });
 
 module.exports = db;
